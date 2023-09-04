@@ -5,12 +5,14 @@ import Home from "./Home";
 import About from "./About";
 import UserProfile from "./components/UserProfile";
 import Counter from "./components/Counter";
-
+import DataFetcher from "./DataFetcher";
+import DataFetcherHooks from "./DataFetcherHooks";
+import profileImg from "./images/user-profile.avif";
 function App() {
   const user = {
-    mail: 'user@example.com',
-    name: 'John Doe',
-    logo: 'path/to/logo.png',
+    mail: 'prem@gmail.com',
+    name: 'Prem',
+    logo: profileImg,
   };
   return (
     <Router>
@@ -19,6 +21,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="profile" element={<UserProfile mail={user.mail} name={user.name} logo={user.logo} />} />
           <Route path="counter" element={<Counter />} />
+          <Route path="dataFetcher" element={<DataFetcher />} />
+          <Route path="dataFetcherHooks" element={<DataFetcherHooks />} />
       </Routes>
     </Router>
   );

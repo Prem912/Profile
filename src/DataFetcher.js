@@ -3,36 +3,35 @@ import React, { Component } from "react";
 class DataFetcher extends Component {
   constructor() {
     super();
-
     this.state = {
       data: null,
     };
   }
 
   componentDidMount() {
-    fetch("https://api.example.com/data")
+    fetch("https://jsonplaceholder.typicode.com/todos")
       .then((response) => response.json())
-
-      .then((data) => this.setState({ data }))
-
-      .catch((error) => console.error("Error:", error));
+      .then((json) => {
+        this.setState({ data: json }); 
+      })
+      .catch((error) => console.error("Error fetching data:", error));
   }
 
   componentWillUnmount() {}
 
   render() {
-    const { data } = this.state;
+    const { data } = this.state; // Get the data from the component state
 
     return (
       <div>
         {data ? (
           <ul>
             {data.map((item) => (
-              <li key={item.id}>{item.name}</li>
+              <li key={item.id}>{item.title}</li>
             ))}
           </ul>
         ) : (
-          <p>Loading</p>
+          <p style={{ display: "grid", placeItems: "center" }}>Loading...</p>
         )}
       </div>
     );

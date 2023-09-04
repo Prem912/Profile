@@ -1,15 +1,15 @@
 import React from "react";
 import "./UserProfile.css";
 
-function UserProfile({ name, mail, avatarUrl }) {
+function UserProfile({ name, mail, logo }) {
   return (
     <div className="user-profile">
       <div className="Inline-user">
-        <img src={avatarUrl} alt="User Avatar" />
+        <img className="profile-img" src={logo} alt="User Avatar" />
 
-        <h2>{name}</h2>
+        <h2 className="user-name">Name: {name}</h2>
 
-        <p>Email: {mail}</p>
+        <p className="email">Email: {mail}</p>
       </div>
     </div>
   );
