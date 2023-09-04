@@ -1,0 +1,10 @@
+.user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.Inline-user{
+height: 300px;
+width: 300px;
+}
